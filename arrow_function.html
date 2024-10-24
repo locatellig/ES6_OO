@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - OO</title>
+
+    <script>
+
+        let quadrado = function (x = 0) {
+            return x * x;
+        }
+
+        document.write(quadrado(4));
+
+        document.write('<br/>');
+
+        /*let quadradoArrowFunc = (x) => {
+            return x * x;
+        }*/
+
+        //Se apenas um parâmetro não precisa dos ()
+        //Se for muito simples também não precisa de {}, nem "return"
+        let quadradoArrowFunc = x => x * x;
+
+        document.write(quadradoArrowFunc(5));
+
+        document.write('<br/>');
+
+        // let parOuImpar = function(numero) {
+        //     if(numero % 2 === 0) {
+        //         return 'par'
+        //     }
+        //     else {
+        //         return 'ímpar'
+        //     }
+        // }
+
+        /*let parOuImpar = numero => {
+            if (numero % 2 === 0) {
+                return 'par'
+            }
+            else {
+                return 'ímpar'
+            }
+        }*/
+
+        let parOuImpar = numero => numero % 2 === 0 ? 'par' : 'ímpar'
+
+        document.write(parOuImpar(3));
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
