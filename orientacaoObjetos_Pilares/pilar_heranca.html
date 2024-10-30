@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - OO</title>
+
+    <script>
+
+        class Animal {  
+            constructor() {
+                this.cor = ''
+                this.tamanho = null
+            }
+
+            dormir() {
+                console.log('Dormir')
+            }
+        }
+
+        class Cachorro extends Animal {
+            constructor() {
+                super()
+                this.orelhas = 'Grandes e caídas'
+            }
+
+            correr() {
+                console.log('Correr')
+            }
+
+            rosnar() {
+                console.log('Rosnar')
+            }
+        }
+
+        class Passaro extends Animal{
+            constructor() {
+                super()
+                this.bico = 'Curto'
+            }
+
+            voar() {
+                console.log('Voar')
+            }
+        }
+
+        //Como passáro extende animal ele vai em cascata, recebendo atributos e metodos de pássaro e animal
+        class Papagaio extends Passaro {
+            constructor() {
+                super()
+                this.sabeFalar = true
+            }
+
+            falar() {
+                console.log('Falar')
+            }
+        }
+
+        let cachorro = new Cachorro()
+        let passaro = new Passaro()
+        let papagaio = new Papagaio()
+
+        cachorro.dormir()
+        console.log(passaro)
+        console.log(papagaio)
+
+        papagaio.falar()
+        papagaio.voar()
+        papagaio.dormir()
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
