@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ES6 - OO</title>
+
+    <script>
+        //Objeto literal
+        let aviao = {
+            cor: 'Branco',
+            modelo: 'Airbus a380',
+            levantarVoo: function() {
+                console.log('Levantar Voo')
+            }
+        }
+        //Função construtora
+        let AviaoF = function() {
+            this.cor = 'Azul'
+            this.modelo = 'Boeing 787',
+            this.levantarVoo - function(){console.log('Levantar Voo')}
+        }
+
+        let aviao2 = new AviaoF()
+
+        //classe
+        class AviaoC {
+            constructor(){
+                this.cor = 'Vermelho'
+                this.modelo = 'Embraer E-Jets'
+            }
+
+            levantarVoo() {
+                console.log('Levantar Voo')
+            }
+        }
+
+        let aviao3 = new AviaoC()
+
+        console.log(aviao)
+        console.log(aviao2)
+        console.log(aviao3)
+
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ES6 - OO</title>
+
+    <script>
+
+        //destructuring -> desestrutura, retira valores de dentro de uma estrutura
+        let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+
+        /*
+        let a = frutas[0]
+        let b = frutas[1]
+        let c = frutas[2]
+        */
+
+        //Índice 0 e 1 para as variáveis [a, b]
+        //pula o índice 2 e atribui o 3 para variável c
+        //let [a, b, , c] = frutas
+
+        //Valor DEFAULT caso o retorno seja undefined
+        let [a, b, c, d, e = 'Laranja'] = frutas
+
+        console.log(a, b, c, d, e)
+
+        //Extraindo valor de array multidimensional
+        let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['José', 'Maria']]
+        let [[, , z], [, x]] = coisas
+
+        console.log(x)
+        console.log(z)
+
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

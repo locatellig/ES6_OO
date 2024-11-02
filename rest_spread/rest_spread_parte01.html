@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ES6 - OO</title>
+
+    <script>
+
+        // contexto spread -> espalha conteúdos de um lugar para o outro de forma organizada
+        //bom para agrupar dados que tenham relação e que possam estar em apenas um lugar
+
+        //string
+        let tituloArtigo = 'Como utilizar o operador rest/spread'
+        console.log(tituloArtigo)
+        console.log(...tituloArtigo)
+        //cada letra da string vai em um índice do array
+        console.log([...tituloArtigo])
+
+        //arrays
+        let listaCursos1 = ['NodeJS e MongoDB', 'ES6, Typescript e Angular 4']
+        let listaCursos2 = ['Multiplataforma Android/IOS', 'Introdução ao GNU/Linux']
+        let listaCursosCompleto = ['Web Completo', 'Android Completo', ...listaCursos1, ...listaCursos2]
+        console.log(listaCursosCompleto)
+
+
+        //objetos
+        let pessoa = {
+            nome: 'João',
+            idade: 27
+        }
+
+        let clone = {
+            endereco: 'Rua FCC',
+            ...pessoa
+        }
+
+        console.log(clone)
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>

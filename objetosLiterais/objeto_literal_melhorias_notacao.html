@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ES6 - OO</title>
+
+    <style>
+        html, body, #home {
+            height: 100%;
+        }
+    </style>
+
+    <script>
+
+        function demonstraInfoPessoa() {
+            let infoPessoa = {
+                nome: document.getElementById('nome').value,
+                idade: document.getElementById('idade').value,
+                sexo: document.getElementById('sexo').value,
+                profissao: document.getElementById('profissao').value,
+                exibirResumo: function() {
+                    console.log(`${this.nome}, ${this.idade} anos, sexo ${this.sexo} é ${this.profissao}`)
+                }
+            }
+
+            console.log(infoPessoa)
+            infoPessoa.exibirResumo()
+
+            //melhorias objeto estático
+            let nome = document.getElementById('nome').value
+            let idade = document.getElementById('idade').value
+            let sexo = document.getElementById('sexo').value
+            let profissao = document.getElementById('profissao').value
+
+            let infoPessoaMelhorias = {
+                nome, //nome = nome variável / valor = valor da variável
+                idade,
+                sexo,
+                profissao,
+                exibirResumo() {
+                    console.log(`${this.nome}, ${this.idade} anos, sexo ${this.sexo} é ${this.profissao}`)
+                }
+            }
+
+            console.log(infoPessoaMelhorias)
+            infoPessoaMelhorias.exibirResumo()
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="home" class="d-flex">
+
+        <div class="container align-self-center justify-content-center">
+
+            <div class="row d-flex align-self-center justify-content-center">
+                <div class="col-12 col-xl-6">
+                    <form>
+
+                        <h2 style="text-align: center;">Formulário</h2>
+
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input type="text" id="nome" name="nome" class="form-control">
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-group col-xl-6">
+                                <label for="idade">Idade</label>
+                                <input type="text" id="idade" name="idade" class="form-control">
+                            </div>
+
+                            <div class="form-group col-xl-6">
+                                <label for="sexo">Sexo</label>
+                                <select name="sexo" id="sexo" name="sexo" class="form-control">
+                                    <option></option>
+                                    <option value="masculino">Masculino</option>
+                                    <option value="feminino">Feminino</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profissao">Profissão</label>
+                            <input type="text" id="profissao" name="profissao" class="form-control">
+                        </div>
+
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary" type="button"
+                                onclick="demonstraInfoPessoa()">Avançar</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>ES6 - OO</title>
+
+    <script>
+
+        let produto = {
+            descricao: 'Notebook',
+            preco: 1800,
+            detalhes:{
+                fabricante: 'abc',
+                modelo: 'xyz'
+            }
+        }
+
+        //token do destructor varia
+        //array []
+        //objeto {}
+        // let { descricao, preco } = produto
+
+        //Definindo a variável que vai conter o valor extraído do objeto
+        // let { descricao: d, preco: p, desconto: ds = 5 } = produto
+
+        let { detalhes: { fabricante, modelo = 'Não informado'}} = produto
+        console.log(fabricante, modelo)
+
+    </script>
+
+</head>
+
+<body>
+
+
+</body>
+
+</html>
