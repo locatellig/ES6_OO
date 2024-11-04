@@ -1,0 +1,185 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Orçamento pessoal</title>
+
+  <!-- Bootstrap início -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap fim -->
+
+  <!-- Font Awesome -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+  <script src="app.js"></script>
+
+</head>
+
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+
+    <nav class="bg-primary navbar navbar-expand-sm navbar-dark">
+
+      <!-- Container -->
+      <div class="container">
+
+        <!-- Logo -->
+        <a href="index.html" class="navbar-brand"><img src="logo.png" alt="logo"></a>
+
+        <!-- menu hamburguer -->
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-data-target">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menus -->
+        <div class="collapse navbar-collapse" id="nav-data-target">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a href="index.html" class="nav-link">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a href="consulta.html" class="nav-link">Consulta</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- Container -->
+
+    </nav>
+
+    <section>
+
+      <!-- Container -->
+      <div class="container">
+
+        <div class="row">
+          <div class="col">
+            <h1 class="display-4 mt-5 mb-5">Registro de nova despesa</h1>
+          </div>
+        </div>
+
+        <form>
+
+          <!-- Row -->
+          <div class="row mb-2">
+
+            <div class="col-md-2">
+
+              <select name="ano" id="ano" class="form-control">
+                <option value="">Ano</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+              </select>
+
+            </div>
+
+            <div class="col-md-2">
+
+              <select name="mes" id="mes" class="form-control">
+                <option value="">Mês</option>
+                <option value="1">Janeiro</option>
+                <option value="2">Fevereiro</option>
+                <option value="3">Março</option>
+                <option value="4">Abril</option>
+                <option value="5">Maio</option>
+                <option value="6">Junho</option>
+                <option value="7">Julho</option>
+                <option value="8">Agosto</option>
+                <option value="9">Setembro</option>
+                <option value="10">Outubro</option>
+                <option value="11">Novembro</option>
+                <option value="12">Dezembro</option>
+              </select>
+
+            </div>
+
+            <div class="col-md-2">
+              <input type="text" name="dia" id="dia" placeholder="Dia" class="form-control">
+            </div>
+
+            <div class="col-md-6">
+              <select name="tipo" id="tipo" class="form-control">
+
+                <option value="">Tipo</option>
+                <option value="1">Alimentação</option>
+                <option value="2">Educação</option>
+                <option value="3">Lazer</option>
+                <option value="4">Saúde</option>
+                <option value="5">Transporte</option>
+
+              </select>
+            </div>
+
+          </div>
+          <!-- Fim Row -->
+
+          <!-- Row -->
+          <div class="row">
+            <div class="col-md-8">
+              <input type="text" name="descricao" id="descricao" placeholder="Descrição" class="form-control">
+            </div>
+
+            <div class="col-md-2">
+              <input type="number" name="valor" id="valor" placeholder="Valor" class="form-control">
+            </div>
+
+            <div class="col-md-2 d-flex justify-content-end">
+              <button type="button" class="btn btn-primary" onclick="cadastrarDespesa()">
+                <i class="fas fa-plus fa-w-14"></i>
+              </button>
+            </div>
+          </div>
+          <!-- Fim Row -->
+
+        </form>
+
+      </div>
+      <!-- Fim container -->
+
+    </section>
+
+
+  </header>
+  <!-- Cabeçalho -->
+
+  <!-- Modal -->
+  <div class="modal fade" id="registraDespesa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div id="modalHeader">
+          <h5 class="modal-title" id="modalLabel"></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="mensagemGravacao">
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" id="modalButton">Voltar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
